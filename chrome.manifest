@@ -1,0 +1,10 @@
+skin    prpl-p18x         classic/1.0 chrome/skin/
+locale	prpl-p18x	en-US		chrome/locale/en-US/
+locale	prpl-p18x	zh-CN		chrome/locale/zh-CN/
+locale	prpl-p18x	es		  chrome/locale/es/
+
+component {56211440-9aa4-11e4-bd06-0800200c9a66} components/p18x.js
+contract @mozilla.org/chat/p18x;1 {56211440-9aa4-11e4-bd06-0800200c9a66}
+category im-protocol-plugin prpl-p18x @mozilla.org/chat/p18x;1
+
+resource prpl-p18x modules/
