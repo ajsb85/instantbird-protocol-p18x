@@ -11,13 +11,13 @@
 		<em:homepageURL>http://alexandersalas.name/</em:homepageURL>
 		<em:iconURL>chrome://prpl-p18x/skin/icon48.png</em:iconURL>
 		<em:icon64URL>chrome://prpl-p18x/skin/icon64.png</em:icon64URL>
-<!--<em:localized>
+		<em:localized>
 			<Description>
 				<em:locale>zh-CN</em:locale>
 				<em:name>P18X Protocol</em:name>
 				<em:creator>Alexander Salas</em:creator>
 				<em:translator>Fatma Youssef</em:translator>
-				<em:description></em:description>
+				<em:description>直接发送SMS到SMSC通过独立的基于USB调制解调器品牌为中兴P18X Web UI的移动宽带</em:description>
 			</Description>
 		</em:localized>
 		<em:localized>
@@ -35,7 +35,7 @@
 				<em:name>Protocolo P18X</em:name>
 				<em:creator>Alexander Salas</em:creator>
 				<em:translator>Fatma Youssef</em:translator>
-				<em:description></em:description>
+				<em:description>Envía SMS directo hacia el SMSC con el MODEM USB con interfaz P18X Web UI de la marca ZTE.</em:description>
 			</Description>
 		</em:localized>-->
 		<em:targetApplication>
