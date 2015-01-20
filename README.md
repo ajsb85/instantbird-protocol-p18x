@@ -60,6 +60,7 @@ Report more devices as issue at https://github.com/alexsalas/instantbird-protoco
 ![p18x](https://raw.github.com/alexsalas/instantbird-protocol-p18x/master/aio/Capture3.PNG "p18x")<br>
 ![p18x](https://raw.github.com/alexsalas/instantbird-protocol-p18x/master/aio/Capture4.PNG "p18x")<br>
 ![p18x](https://raw.github.com/alexsalas/instantbird-protocol-p18x/master/aio/Capture5.PNG "p18x")<br>
+![p18x](https://raw.github.com/alexsalas/instantbird-protocol-p18x/master/aio/Capture6.PNG "p18x")<br>
 
 ### Works with:
 
