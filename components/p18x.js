@@ -22,8 +22,7 @@ var maxTimeOutCounter = 2;
 // These timeouts are in milliseconds..
 const kConnectTimeout = 1 * 1000; // 1 sec.
 
-function Conversation(aAccount, aPhoneNumber)
-{
+function Conversation(aAccount, aPhoneNumber) {
   this._phoneNumber = aPhoneNumber;
   this._account = aAccount;
   this.buddy = aAccount.getBuddy(aPhoneNumber);
@@ -179,8 +178,7 @@ AccountBuddy.prototype = {
     this._account.createConversation(this.userName),
 }
 
-function Account(aProtoInstance, aImAccount)
-{
+function Account(aProtoInstance, aImAccount) {
   this._init(aProtoInstance, aImAccount);
   this._buddies = new Map();
   this._conversations = new Map();
