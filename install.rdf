@@ -4,13 +4,40 @@
 		<em:id>prpl-p18x@alexandersalas.name</em:id>
 		<em:unpack>true</em:unpack>
 		<em:name>P18X Protocol</em:name>
-		<em:version>1.0</em:version>
-		<em:description>P18X Protocol.</em:description>
+		<em:version>1.1</em:version>
+		<em:description>Send SMS direct to SMSC by the standalone mobile broadband USB-based modems of the brand ZTE with P18X Web UI.</em:description>
 		<em:creator>Alexander Salas</em:creator>
 		<em:translator>Fatma Youssef</em:translator>
 		<em:homepageURL>http://alexandersalas.name/</em:homepageURL>
 		<em:iconURL>chrome://prpl-p18x/skin/icon48.png</em:iconURL>
-		<!-- <em:icon64URL>chrome://prpl-p18x/skin/icon64.png</em:icon64URL> -->
+		<em:icon64URL>chrome://prpl-p18x/skin/icon64.png</em:icon64URL>
+<!--<em:localized>
+			<Description>
+				<em:locale>zh-CN</em:locale>
+				<em:name>P18X Protocol</em:name>
+				<em:creator>Alexander Salas</em:creator>
+				<em:translator>Fatma Youssef</em:translator>
+				<em:description></em:description>
+			</Description>
+		</em:localized>
+		<em:localized>
+			<Description>
+				<em:locale>en-US</em:locale>
+				<em:name>P18X Protocol</em:name>
+				<em:creator>Alexander Salas</em:creator>
+				<em:translator>Fatma Youssef</em:translator>
+				<em:description>Send SMS direct to SMSC by the standalone mobile broadband USB-based modems of the brand ZTE with P18X Web UI.</em:description>
+			</Description>
+		</em:localized>
+		<em:localized>
+			<Description>
+				<em:locale>es</em:locale>
+				<em:name>Protocolo P18X</em:name>
+				<em:creator>Alexander Salas</em:creator>
+				<em:translator>Fatma Youssef</em:translator>
+				<em:description></em:description>
+			</Description>
+		</em:localized>-->
 		<em:targetApplication>
 			<Description>
 				<em:id>{33cb9019-c295-46dd-be21-8c4936574bee}</em:id>
