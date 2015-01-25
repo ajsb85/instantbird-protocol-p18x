@@ -15,10 +15,10 @@ XPCOMUtils.defineLazyGetter(this, "_contacts", function ()
   l10nHelper("chrome://chat/locale/contacts.properties")
 );
 //initLogModule("p18x", this);
-var lockObs = false;
-var isTest = false;
-var timeOutCounter = 0;
-var maxTimeOutCounter = 2;
+let lockObs = false;
+let isTest = false;
+let timeOutCounter = 0;
+let maxTimeOutCounter = 2;
 // These timeouts are in milliseconds..
 const kConnectTimeout = 1 * 1000; // 1 sec.
 
@@ -87,7 +87,7 @@ Conversation.prototype = {
     this.writeMessage(this.account.alias !== "" ?
                         this.account.alias : this.account.name,
                       aMsg, {outgoing: true});
-      var queryParams = {
+      let queryParams = {
         goformId: "SEND_SMS",
         notCallback: true,
         Number: this._phoneNumber,
@@ -99,7 +99,7 @@ Conversation.prototype = {
       };
       this._account.setCmdProcess(queryParams, (function (aRequest) {
         if (aRequest.result == "success") {
-          var timer = Cc["@mozilla.org/timer;1"]
+          let timer = Cc["@mozilla.org/timer;1"]
                                .createInstance(Ci.nsITimer);
           timer.initWithCallback((function () {
             try {
@@ -249,7 +249,7 @@ Account.prototype = {
       logger: {log: this.LOG.bind(this),
                debug: this.DEBUG.bind(this)}
     }
-    var url = "http://" + this._lan_ipaddr + "/goform/goform_get_cmd_process?";
+    let url = "http://" + this._lan_ipaddr + "/goform/goform_get_cmd_process?";
     url += getAsUriParameters(params);
     this._ajax = httpRequest(url, options);
     this._ajax.onload = function (aRequest) {
@@ -268,7 +268,7 @@ Account.prototype = {
                debug: this.DEBUG.bind(this)}
     }
     let url = "http://" + this._lan_ipaddr + "/goform/goform_set_cmd_process";
-    var xhr = httpRequest(url, options);
+    let xhr = httpRequest(url, options);
     xhr.onload = function (aRequest) {
       successCallback(JSON.parse(aRequest.target.responseText));
     }
@@ -316,7 +316,7 @@ Account.prototype = {
     "data_volume_alert_percent",
     "data_volume_limit_unit",
     "roam_setting_option"];
-      var queryParams = {
+      let queryParams = {
         cmd:timerQueryString.join(","),
         multi_data: 1,
         sms_received_flag_flag: 0,
@@ -331,8 +331,8 @@ Account.prototype = {
       timeOutCounter++;
       this.getCmdProcess(queryParams, (function (aRequest) {
           timeOutCounter = 0;
-          var network_type = aRequest.network_type.toLowerCase();
-          var modem_main_state = aRequest.modem_main_state;
+          let network_type = aRequest.network_type.toLowerCase();
+          let modem_main_state = aRequest.modem_main_state;
             switch (modem_main_state) {
               case "modem_waitpin":
                 this.gotDisconnected(Ci.prplIAccount.ERROR_OTHER_ERROR,
@@ -382,7 +382,7 @@ Account.prototype = {
   },
 
   getNewMessages: function () {
-    var queryParams = {
+    let queryParams = {
       cmd: "sms_data_total",
       tags: 1,
       mem_store: 1,
@@ -392,9 +392,9 @@ Account.prototype = {
       isAsc: true,
       isTest: isTest
     };
-    var msgIds = [];
+    let msgIds = [];
     this.getCmdProcess(queryParams, (function (aRequest) {
-      var msgs = aRequest.messages.reverse();
+      let msgs = aRequest.messages.reverse();
       msgs.forEach( i => {
           this.receiveMessage(i.number,
                               decodeMessage(escapeMessage(i.content)));
@@ -407,7 +407,7 @@ Account.prototype = {
   setSmsRead: function (msgIds) {
     if (msgIds.length > 0) {
       msgIds += ";";
-      var queryParams = {
+      let queryParams = {
         isTest: isTest,
         goformId: "SET_MSG_READ",
         msg_id: msgIds,
@@ -454,7 +454,7 @@ Account.prototype = {
   },
 
   getSMSDeliveryReport: function () {
-    var queryParams = {
+    let queryParams = {
       cmd: "sms_status_rpt_data",
       page: 0,
       data_per_page: 10,
@@ -476,7 +476,7 @@ Account.prototype = {
   getSmsStatusInfo: function (obj, callback) {
     if (!this.connected)
       obj.timer.cancel();
-    var queryParams = {
+    let queryParams = {
       cmd: "sms_cmd_status_info",
       sms_cmd: obj.smsCmd,
       isTest: isTest
@@ -569,7 +569,7 @@ Account.prototype = {
   },
 
   setSmsSetting: function () {
-    var queryParams = {
+    let queryParams = {
       goformId: "SET_MESSAGE_CENTER",
       save_time: this.getString("sms_para_validity_period"),
       MessageCenter: this.getString("sms_para_sca"),
@@ -580,7 +580,7 @@ Account.prototype = {
     };
     this.setCmdProcess(queryParams, (function (aRequest) {
       if (aRequest.result == "success") {
-        var timer = Cc["@mozilla.org/timer;1"]
+        let timer = Cc["@mozilla.org/timer;1"]
                              .createInstance(Ci.nsITimer);
         timer.initWithCallback((function () {
           try {
@@ -605,12 +605,12 @@ Account.prototype = {
   },
 
   getSmsSetting: function () {
-    var queryParams = {
+    let queryParams = {
       cmd: "sms_parameter_info",
       isTest: isTest
     };
     this.getCmdProcess(queryParams, (function (aRequest) {
-      var options = {};
+      let options = {};
       options.validity = Cc["@mozilla.org/supports-string;1"]
               .createInstance(Ci.nsISupportsString);
       options.centerNumber = Cc["@mozilla.org/supports-string;1"]
@@ -636,7 +636,7 @@ Account.prototype = {
           options.validity.data = "twelve_hours";
           break;
       }
-/*     var setSmsSetting = false;
+/*     let setSmsSetting = false;
     if (this.getBool("sms_para_status_report")!=options.deliveryReport)
       if (this.prefs.prefHasUserValue("sms_para_status_report"))
         setSmsSetting = true;
@@ -656,7 +656,7 @@ Account.prototype = {
 
   addBuddiesFromDevice: function () {
     lockObs = true;
-    var queryParams = {
+    let queryParams = {
       cmd: "pbm_data_total",
       mem_store: 2,
       page: 0,
@@ -666,9 +666,9 @@ Account.prototype = {
       isTest: isTest
     };
     this.getCmdProcess(queryParams, (function (aRequest) {
-      var books = [];
+      let books = [];
       let buddy;
-      var aTag;
+      let aTag;
       aRequest.pbm_data.forEach( i => {
         if (this._buddies.has(i.pbm_number)) {
           buddy = this.getBuddy(i.pbm_number);
@@ -745,7 +745,7 @@ Account.prototype = {
   },
 
   addBuddyToPBM: function (aBuddy, callback) {
-    var queryParams = {
+    let queryParams = {
       goformId: "PBM_CONTACT_ADD",
       notCallback: true,
       location: aBuddy._pbm_location,
@@ -780,7 +780,7 @@ Account.prototype = {
   // Called when a user removes a contact from within Instantbird.
   removeBuddy: function (aBuddy, aRemoveFromDevice) {
     if (aRemoveFromDevice) {
-      var queryParams = {
+      let queryParams = {
         goformId: "PBM_CONTACT_DEL",
         notCallback: true,
         del_option: "delete_num",
@@ -851,9 +851,9 @@ Account.prototype = {
       let aBuddy = aSubject.preferredBuddy.preferredAccountBuddy;
       if (aBuddy.account.name == this.name &&
           aBuddy.account.protocol.id == this.protocol.id) {
-        var group_counter = 0;
-        var pbm_location = 0;
-        var pbm_group = "";
+        let group_counter = 0;
+        let pbm_location = 0;
+        let pbm_group = "";
         aSubject.getTags().map(t => t.name).forEach( group => {
           if (this.getGroupByL10N(group)) {
             group_counter++;
@@ -923,6 +923,17 @@ p18x.prototype = {
                           "largest": _("sms_validity_largest")}},
   },
   commands: [
+    {
+      name: "stus",
+      get helpString() "help",
+      run: function (aMsg, aConv) {
+        let statusValue = Ci.imIStatusInfo["STATUS_AVAILABLE"];
+        dump(Services.core.globalUserStatus.statusText+"\n");
+        dump(Services.core.globalUserStatus.statusType+"\n");
+        Services.core.globalUserStatus.setStatus(statusValue, aMsg);
+        return true;
+      }
+    },
     {
       name: "email",
       get helpString() "help",
