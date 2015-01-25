@@ -54,13 +54,13 @@ Report more devices as issue at https://github.com/alexsalas/instantbird-protoco
 
 ### Preview Screenshots
 
-![p18x](https://raw.github.com/alexsalas/instantbird-protocol-p18x/master/press/screen1.jpg "p18x")<br>
-![p18x](https://raw.github.com/alexsalas/instantbird-protocol-p18x/master/press/Capture.PNG "p18x")<br>
-![p18x](https://raw.github.com/alexsalas/instantbird-protocol-p18x/master/press/Capture2.PNG "p18x")<br>
-![p18x](https://raw.github.com/alexsalas/instantbird-protocol-p18x/master/press/Capture3.PNG "p18x")<br>
-![p18x](https://raw.github.com/alexsalas/instantbird-protocol-p18x/master/press/Capture4.PNG "p18x")<br>
-![p18x](https://raw.github.com/alexsalas/instantbird-protocol-p18x/master/press/Capture5.PNG "p18x")<br>
-![p18x](https://raw.github.com/alexsalas/instantbird-protocol-p18x/master/press/Capture6.PNG "p18x")<br>
+![p18x](https://raw.github.com/alexsalas/instantbird-protocol-p18x/master/press/gallery/screen1.jpg "p18x")<br>
+![p18x](https://raw.github.com/alexsalas/instantbird-protocol-p18x/master/press/aio/Capture.PNG "p18x")<br>
+![p18x](https://raw.github.com/alexsalas/instantbird-protocol-p18x/master/press/aio/Capture2.PNG "p18x")<br>
+![p18x](https://raw.github.com/alexsalas/instantbird-protocol-p18x/master/press/aio/Capture3.PNG "p18x")<br>
+![p18x](https://raw.github.com/alexsalas/instantbird-protocol-p18x/master/press/aio/Capture4.PNG "p18x")<br>
+![p18x](https://raw.github.com/alexsalas/instantbird-protocol-p18x/master/press/aio/Capture5.PNG "p18x")<br>
+![p18x](https://raw.github.com/alexsalas/instantbird-protocol-p18x/master/press/aio/Capture6.PNG "p18x")<br>
 
 ### Works with:
 
