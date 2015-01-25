@@ -924,17 +924,6 @@ p18x.prototype = {
   },
   commands: [
     {
-      name: "stus",
-      get helpString() "help",
-      run: function (aMsg, aConv) {
-        let statusValue = Ci.imIStatusInfo["STATUS_AVAILABLE"];
-        dump(Services.core.globalUserStatus.statusText+"\n");
-        dump(Services.core.globalUserStatus.statusType+"\n");
-        Services.core.globalUserStatus.setStatus(statusValue, aMsg);
-        return true;
-      }
-    },
-    {
       name: "email",
       get helpString() "help",
       run: function (aMsg, aConv) {
