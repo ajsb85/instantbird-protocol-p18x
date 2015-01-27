@@ -4,7 +4,9 @@
 		<em:id>prpl-p18x@alexandersalas.name</em:id>
 		<em:unpack>true</em:unpack>
 		<em:name>P18X Protocol</em:name>
-		<em:version>1.1.1</em:version>
+		<em:version>1.1.2</em:version>
+    <em:type>2</em:type>
+    <em:multiprocessCompatible>true</em:multiprocessCompatible>
 		<em:description>Send SMS direct to SMSC by the standalone mobile broadband USB-based modems of the brand ZTE with P18X Web UI.</em:description>
 		<em:creator>Alexander Salas</em:creator>
 		<em:translator>Fatma Youssef</em:translator>
