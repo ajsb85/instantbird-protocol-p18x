@@ -1,4 +1,4 @@
-![p18x](https://raw.github.com/alexsalas/instantbird-protocol-p18x/master/chrome/skin/ztelogo.png "p18x")
+![p18x](https://raw.githubusercontent.com/mozillavenezuela/instantbird-protocol-p18x/master/press/logos/icon48.fw.png "p18x")
 
 # Instantbird Protocol P18X
 Assists to setup a chat account for ZTE Data Cards with P18X Web UI.
